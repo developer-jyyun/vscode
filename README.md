@@ -1,5 +1,18 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## project
+
+목표 ":: 진행 한 프로젝트, 기술 블로그 포스팅 정리할 수 있는 개인 블로그 만들기
+
+next.js app 라우팅
+pages : main, about, projects, articles contact, components
+
+## 기술스택
+
+yarn
+next.js
+tailwind css
+
 ## Getting Started
 
 First, run the development server:
