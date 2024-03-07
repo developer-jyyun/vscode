@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Nanum_Gothic, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import TabsBar from "./components/TabsBar";
-import Sidebar from "./components/Sidebar";
-import Titlebar from "./components/Titlebar";
+import Titlebar from "@/components/Titlebar";
+import Sidebar from "@/components/Sidebar";
+import Tabsbar from "@/components/TabsBar";
 
 const nanum = Nanum_Gothic({
   weight: ["400", "700"],
@@ -29,9 +29,9 @@ export default function RootLayout({
         <>
           <Titlebar />
           <div className="flex w-full">
-            <Sidebar />
+            <Sidebar />{" "}
             <main className="w-full h-[calc(100vh-2.25rem)] overflow-y-scroll scrollbar-hide">
-              <TabsBar />
+              <Tabsbar />
               {children}
             </main>
           </div>

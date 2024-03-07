@@ -21,7 +21,7 @@ const navData = [
     icon: "icons/markdown_icon.svg",
   },
   {
-    name: "components.json",
+    name: "components.tsx",
     path: "/components",
     icon: "icons/react_icon.svg",
   },
