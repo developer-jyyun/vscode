@@ -15,16 +15,17 @@ const config: Config = {
       },
       colors: {
         main: "#302f3d",
-        sub: "#35334f",
         "gray-e": "#eee",
         "light-yellow": "#ffeaa2",
         "dark-navy": "#130e55",
+        "main-navy": "#35334f",
+        "light-navy": "#312e63",
         "code-red": "#f87171",
         "code-purple": "#d1a4ff",
         "code-lime": "#d9ff98",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
 export default config;

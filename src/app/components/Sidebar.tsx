@@ -1,10 +1,11 @@
-import React from "react";
 import NavItem from "./NavItem";
+import IconBar from "./IconBar";
 
 export default function Sidebar() {
   return (
-    <nav className="flex flex-col max-h-screen">
-      <ul className=" flex flex-col w-64  bg-sub pt-20  h-screen">
+    <nav className=" h-[calc(100vh-2.25rem)] flex">
+      <IconBar />
+      <ul className="flex flex-col pt-20 bg-main-navy pr-4 ">
         <NavItem />
       </ul>
     </nav>

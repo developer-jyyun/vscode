@@ -30,7 +30,7 @@ export default function RootLayout({
           <Titlebar />
           <div className="flex w-full">
             <Sidebar />
-            <main className="w-full h-full overflow-y-scroll">
+            <main className="w-full h-[calc(100vh-2.25rem)] overflow-y-scroll scrollbar-hide">
               <TabsBar />
               {children}
             </main>

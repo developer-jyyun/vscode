@@ -9,7 +9,7 @@ export default function Titlebar() {
   return (
     <>
       <div
-        className={`${nanum.className} w-full h-9 bg-dark-navy text-gray-e text-main  font-semibold py-2 p-2 flex  items-center justify-between`}
+        className={`${nanum.className} w-full h-9 bg-dark-navy text-gray-e font-semibold py-2 p-2 flex  items-center justify-between`}
       >
         <div>
           <ul className="flex gap-4 capitalize text-sm">

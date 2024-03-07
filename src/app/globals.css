@@ -29,7 +29,5 @@ body {
 }
 nav {
   font-family: "Nanum Gothic", sans-serif;
-}
-main {
-  height: calc(100vh - 56px);
+  z-index: 5;
 }
