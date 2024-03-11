@@ -16,9 +16,11 @@ const config: Config = {
       colors: {
         main: "#302f3d",
         "gray-e": "#eee",
-        "light-yellow": "#ffeaa2",
+        "light-yellow": "#f7ffac",
+        // "light-yellow": "#ffeaa2",
         "dark-navy": "#130e55",
         "main-navy": "#35334f",
+        "dark-red": "#8b0000",
         "light-navy": "#312e63",
         "code-red": "#f87171",
         "code-purple": "#d1a4ff",
