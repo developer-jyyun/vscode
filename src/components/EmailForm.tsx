@@ -4,18 +4,21 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import Button from "./UI/Button";
 import { SendMessage } from "./UI/MessageUI";
 import MessageUI from "./UI/MessageUI";
+import { sendContactEmail } from "@/service/contact";
 
 interface Form {
   from: string;
   subject: string;
   message: string;
 }
+
+const DEFAULT_DATA = {
+  from: "",
+  subject: "",
+  message: "",
+};
 export default function EmailForm() {
-  const [form, setForm] = useState<Form>({
-    from: "",
-    subject: "",
-    message: "",
-  });
+  const [form, setForm] = useState<Form>(DEFAULT_DATA);
 
   const [message, setMessage] = useState<SendMessage | null>(null);
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -26,10 +29,25 @@ export default function EmailForm() {
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(form);
-    setMessage({ message: "이메일이 전송되었습니다!", state: "success" });
-    setTimeout(() => {
-      setMessage(null);
-    }, 3000);
+    sendContactEmail(form)
+      .then(() => {
+        setMessage({
+          message: "이메일이 성공적으로 전송되었습니다!",
+          state: "success",
+        });
+        setForm(DEFAULT_DATA);
+      })
+      .catch(() => {
+        setMessage({
+          message: "이메일 전송에 실패하였습니다!",
+          state: "error",
+        });
+      })
+      .finally(() => {
+        setTimeout(() => {
+          setMessage(null);
+        }, 3000);
+      });
   };
   return (
     <div className="send-box bg-gray-c font-dunggeunmo relative">
@@ -72,7 +90,6 @@ export default function EmailForm() {
             onChange={onChange}
           />
           <button className="bg-gray-e p-2">Send</button>
-          {/* <Button text="Send Email" theme="line" /> */}
         </form>
       </div>
     </div>
