@@ -6,7 +6,7 @@ export default function HowIWorks() {
     <CodeBlock objName="description" type="arr">
       <div
         className="text-code-lime text-md indent-10 p-2 
-        flex flex-col gap-2
+        flex flex-col gap-1
       max-lg:indent-0 max-lg:text-xs  max-lg:px-10"
       >
         <p>

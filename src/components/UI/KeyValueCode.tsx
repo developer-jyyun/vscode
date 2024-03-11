@@ -10,7 +10,7 @@ interface Props {
 
 export default function KeyValueCode({ keyName, value, link, array }: Props) {
   return (
-    <p className="indent-10 p-2 text-white max-lg:indent-0">
+    <p className="indent-10 text-white  max-lg:indent-0">
       <span className="text-code-red">{keyName}</span>:
       {link ? (
         <Link href={link} className="text-code-lime ml-2 max-lg:ml-1">

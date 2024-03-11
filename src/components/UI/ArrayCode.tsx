@@ -50,7 +50,7 @@ export default function ArrayCode({ keyName, array, type }: Props) {
   };
 
   return (
-    <div className="indent-10 p-2 text-white flex justify-start max-lg:indent-0">
+    <div className="indent-10 text-white flex justify-start max-lg:indent-0">
       <div>
         <span className="text-code-red">{keyName}</span>
         <span>:</span>
