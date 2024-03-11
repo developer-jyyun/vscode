@@ -5,7 +5,7 @@ export default function Sidebar() {
   return (
     <nav className=" h-[calc(100vh-2.25rem)] flex">
       <IconBar />
-      <ul className="flex flex-col pt-20 bg-main-navy pr-4 ">
+      <ul className="max-lg:hidden flex flex-col pt-20 pr-4 bg-main-navy  ">
         <NavItem />
       </ul>
     </nav>

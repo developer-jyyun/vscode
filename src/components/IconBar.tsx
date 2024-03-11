@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function IconBar() {
   return (
-    <ul className="flex flex-col pt-20 items-center  gap-10 text-4xl bg-light-navy px-4">
+    <ul className="flex flex-col pt-20 items-center gap-10 text-4xl bg-light-navy px-4 max-lg:text-2xl">
       <li>
         <Link href="/">
           <VscFiles />

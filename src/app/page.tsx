@@ -1,12 +1,17 @@
 import Image from "next/image";
 import "./globals.css";
 import Button from "@/components/UI/Button";
+import { Nanum_Gothic, JetBrains_Mono } from "next/font/google";
+
+const mono = JetBrains_Mono({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <section className="h-full flex flex-col items-end justify-end gap-10 p-24">
       <div className="flex flex-col items-end justify-end gap-10">
-        <h2 className="text-7xl font-bold ">hello, world! |</h2>
+        <h2 className={`${mono.className} text-7xl font-bold`}>
+          hello, world! |
+        </h2>
         <h3 className="text-cyan-100 text-4xl leading-10 font-bold">
           <span>
             <span className="text-code-red">사용자 중심</span>의 웹 개발을

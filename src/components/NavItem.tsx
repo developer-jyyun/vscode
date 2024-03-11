@@ -8,7 +8,13 @@ export default function NavItem({}) {
       {navData.map((nav) => (
         <li key={nav.name} className="px-4 py-2 rounded-sm hover:bg-sky-700">
           <Link className="flex flex-row gap-2" href={nav.path}>
-            <Image src={nav.icon} alt={nav.name} width={20} height={20}></Image>
+            <Image
+              src={nav.icon}
+              alt={nav.name}
+              width={20}
+              height={20}
+              className="w-5 h-5"
+            />
             <span>{nav.name}</span>
           </Link>
         </li>

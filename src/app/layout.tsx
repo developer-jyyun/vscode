@@ -12,8 +12,8 @@ const nanum = Nanum_Gothic({
 const mono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Jiyoung's blog",
-  description: "Junior Developer's Growth Diary",
+  title: "Jiyoung's portfolio",
+  description: "Front-end Developer Jiyoung Yun",
 };
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${mono.className}box-border flex flex-col max-h-screen`}
+        className={`${mono.className} box-border flex flex-col max-h-screen`}
       >
         <>
           <Titlebar />
