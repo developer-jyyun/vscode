@@ -1,13 +1,12 @@
 const navData = [
   {
-    name: "home.html",
+    name: "home.tsx",
     path: "/",
-    icon: "icons/html_icon.svg",
+    icon: "/icons/react_icon.svg",
   },
   {
     name: "about.js",
     path: "/about",
-    // icon: "/icons/css_icon.svg",
     icon: "/icons/js_icon.svg",
   },
   {
@@ -16,16 +15,6 @@ const navData = [
     icon: "/icons/ts_icon.svg",
   },
 
-  {
-    name: "posts.md",
-    path: "/posts",
-    icon: "/icons/markdown_icon.svg",
-  },
-  {
-    name: "components.jsx",
-    path: "/components",
-    icon: "/icons/react_icon.svg",
-  },
   {
     name: "contact.json",
     path: "/contact",

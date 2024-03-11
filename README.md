@@ -2,10 +2,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## project
 
-목표 : VsCode를 테마로 한 진행 한 프로젝트, 기술 블로그 포스팅 정리할 수 있는 개인 블로그 만들기
+작업 중................
+목표 : VsCode를 테마로 포트폴리오 만들기
 
-next.js app 라우팅
-pages : main, about, projects, articles contact, components
+- next.js app 라우팅
+- pages : main, about, projects, contact,
+- TODO: posts, components, dark/light theme, 반응형, 애니메이션 효과
 
 ## 기술스택
 

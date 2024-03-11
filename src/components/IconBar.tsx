@@ -18,8 +18,8 @@ export default function IconBar() {
         </Link>
       </li>
       <li>
-        <Link href="/">
-          <VscGear />
+        <Link href="/about">
+          <VscAccount />
         </Link>
       </li>
       <li>
@@ -28,13 +28,13 @@ export default function IconBar() {
         </Link>
       </li>
       <li>
-        <Link href="/about">
-          <VscAccount />
-        </Link>
-      </li>
-      <li>
         <Link href="/contact">
           <VscMail />
+        </Link>
+      </li>{" "}
+      <li>
+        <Link href="/">
+          <VscGear />
         </Link>
       </li>
     </ul>

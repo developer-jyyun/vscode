@@ -23,8 +23,8 @@ export default function Home() {
         </h3>
       </div>
       <div>
-        <Button text="뭐하지" link="/" theme="bg" />
-        <Button text="고민즁" link="/" theme="line" />
+        <Button text="projects" link="/projects" theme="bg" />
+        <Button text="contact" link="/contact" theme="line" />
       </div>
     </section>
   );

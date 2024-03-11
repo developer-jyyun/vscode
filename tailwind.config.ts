@@ -18,7 +18,6 @@ const config: Config = {
         "gray-e": "#eee",
         "gray-c": "#ccc",
         "light-yellow": "#f7ffac",
-        // "light-yellow": "#ffeaa2",
         "dark-navy": "#130e55",
         "main-navy": "#35334f",
         "dark-red": "#8b0000",
