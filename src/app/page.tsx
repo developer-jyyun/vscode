@@ -7,12 +7,12 @@ const mono = JetBrains_Mono({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <section className="h-full flex flex-col items-end justify-end gap-10 p-24">
-      <div className="flex flex-col items-end justify-end gap-10">
-        <h2 className={`${mono.className} text-7xl font-bold`}>
+    <section className="flex flex-col items-end justify-end gap-10 p-24 bg-main max-lg:p-2 ">
+      <div className="flex flex-col items-end justify-end gap-10 ">
+        <h2 className={`max-lg:text-xl text-7xl font-bold ${mono.className}`}>
           hello, world! |
         </h2>
-        <h3 className="text-cyan-100 text-4xl leading-10 font-bold">
+        <h3 className="text-cyan-100 text-4xl leading-10 font-bold max-lg:text-lg">
           <span>
             <span className="text-code-red">사용자 중심</span>의 웹 개발을
             지향하는
