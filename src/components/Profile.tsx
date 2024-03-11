@@ -2,28 +2,14 @@ import Link from "next/link";
 import CodeBlock from "./UI/CodeBlock";
 import KeyValueCode from "./UI/KeyValueCode";
 import ArrayCode from "./UI/ArrayCode";
+import ContactInfo from "./UI/ContactInfo";
 
 export default function Profile() {
   return (
     <>
       <CodeBlock objName="profile" type="obj">
         <KeyValueCode keyName="name" value="윤지영" />
-        <KeyValueCode keyName="phone" value="010-5705-6142" />
-        <KeyValueCode
-          keyName="email"
-          value="developer.jyyun@gmail.com"
-          link="developer.jyyun@gmail.com"
-        />
-        <KeyValueCode
-          keyName="github"
-          value="developer-jyyun"
-          link="https://github.com/developer-jyyun"
-        />
-        <KeyValueCode
-          keyName="blog"
-          value="developer-jyyun.log"
-          link="https://velog.io/@developer-jyyun/posts"
-        />
+        <ContactInfo />
         <KeyValueCode
           keyName="notion"
           value="TIL"
