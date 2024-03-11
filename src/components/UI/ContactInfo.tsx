@@ -25,11 +25,6 @@ export default function ContactInfo() {
         value="developer-jyyun.log"
         link="https://velog.io/@developer-jyyun/posts"
       />
-      <KeyValueCode
-        keyName="notion"
-        value="notion"
-        link="https://www.notion.so/7d84ebcfba0348e387d3bd9a92479757"
-      />
     </>
   );
 }
