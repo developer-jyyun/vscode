@@ -20,6 +20,7 @@ const config: Config = {
         "light-yellow": "#f7ffac",
         "dark-navy": "#130e55",
         "main-navy": "#35334f",
+        "contents-navy": "#0f172a",
         "dark-red": "#8b0000",
         "light-navy": "#312e63",
         "code-red": "#f87171",

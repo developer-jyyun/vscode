@@ -71,3 +71,36 @@ button {
   z-index: -1;
   box-shadow: 8px 8px 0 #ccc;
 }
+
+/* === 밀도 스케일 === */
+.content-dense .code-block {
+  font-size: 14px;
+  line-height: 1.75;
+}
+.content-regular .code-block {
+  font-size: 15px;
+  line-height: 1.75;
+}
+.content-sparse .code-block {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* === 톤 스킨 === */
+/* 기본(red-lime) → 아무 것도 붙이지 않으면 기존 그대로 */
+
+/* muted: about / project 전용 */
+.theme-muted .text-code-red {
+  color: #93c5fd;
+} /* sky-300 */
+.theme-muted .text-code-lime {
+  color: #fff5d5;
+}
+/* accent: main / contact 전용(포인트 강조) */
+/* .theme-accent .text-code-red {
+  color: #f87171;
+}
+.theme-accent .text-code-lime {
+  color: #d9ff98;
+}
+ */

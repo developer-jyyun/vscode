@@ -10,10 +10,6 @@ export default function HowIWorks() {
       max-lg:indent-0 max-lg:text-xs  max-lg:px-10"
       >
         <p>
-          {`"디발자를 꿈꾸는 신입 프론트엔드 개발자입니다."`}
-          <span className="text-white">,</span>
-        </p>
-        <p>
           {`"웹 접근성, 사용자들의 UI/UX 개선에 관심이 많습니다."`}
           <span className="text-white">,</span>
         </p>

@@ -7,7 +7,7 @@ const mono = JetBrains_Mono({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-end justify-end gap-10 p-24 bg-main max-lg:p-2 ">
+    <section className="flex flex-col items-end justify-end gap-10 p-24 bg-contents-navy max-lg:p-2 ">
       <div className="flex flex-col items-end justify-end gap-10 ">
         <h2 className={`max-lg:text-xl text-7xl font-bold ${mono.className}`}>
           hello, world! |

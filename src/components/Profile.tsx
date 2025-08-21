@@ -18,7 +18,7 @@ export default function Profile() {
 
         <ArrayCode
           keyName="certificate"
-          array="웹디자인기능사, 정보처리기사(필기)"
+          array="웹디자인기능사, 정보처리기사"
           type="nowrap"
         />
 
