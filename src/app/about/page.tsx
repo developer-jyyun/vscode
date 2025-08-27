@@ -1,10 +1,10 @@
-import Profile from "@/components/Profile";
 import Button from "@/components/UI/Button";
 import Link from "next/link";
 
-import Career from "@/components/Career";
-import HowIWorks from "@/components/HowIWorks";
 import { TITLE_CLASS } from "../constants";
+import Profile from "./_components/Profile";
+import Career from "./_components/Career";
+import HowIWorks from "./_components/HowIWorks";
 
 export default function AboutPage() {
   return (

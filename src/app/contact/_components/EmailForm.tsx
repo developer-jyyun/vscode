@@ -1,10 +1,9 @@
 "use client";
 
 import { ChangeEvent, FormEvent, useState } from "react";
-import Button from "./UI/Button";
-import { SendMessage } from "./UI/MessageUI";
-import MessageUI from "./UI/MessageUI";
+
 import { sendContactEmail } from "@/service/contact";
+import MessageUI, { SendMessage } from "@/components/UI/MessageUI";
 
 interface Form {
   from: string;

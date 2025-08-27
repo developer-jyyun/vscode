@@ -1,7 +1,7 @@
-import CodeBlock from "./UI/CodeBlock";
-import KeyValueCode from "./UI/KeyValueCode";
-import ArrayCode from "./UI/ArrayCode";
-import GroupListCode from "./UI/GroupListCode";
+import ArrayCode from "@/components/UI/ArrayCode";
+import CodeBlock from "@/components/UI/CodeBlock";
+import GroupListCode from "@/components/UI/GroupListCode";
+import KeyValueCode from "@/components/UI/KeyValueCode";
 
 export default function Career() {
   return (

@@ -1,9 +1,9 @@
+import CodeBlock from "@/components/UI/CodeBlock";
+import KeyValueCode from "@/components/UI/KeyValueCode";
 import Link from "next/link";
-import CodeBlock from "./UI/CodeBlock";
-import KeyValueCode from "./UI/KeyValueCode";
-import ArrayCode from "./UI/ArrayCode";
-import ContactInfo from "./UI/ContactInfo";
-import GroupListCode from "./UI/GroupListCode";
+import ContactInfo from "./ContactInfo";
+import ArrayCode from "@/components/UI/ArrayCode";
+import GroupListCode from "@/components/UI/GroupListCode";
 
 export default function Profile() {
   return (
@@ -50,6 +50,11 @@ export default function Profile() {
             },
           ]}
         />
+        <KeyValueCode
+          keyName="resume"
+          value="📃 이력서(PDF)"
+          link="/docs/resume.pdf"
+        ></KeyValueCode>
       </CodeBlock>
     </>
   );

@@ -1,9 +1,9 @@
 import CodeBlock from "@/components/UI/CodeBlock";
-import ContactInfo from "@/components/UI/ContactInfo";
 import KeyValueCode from "@/components/UI/KeyValueCode";
 import React from "react";
 import { TITLE_CLASS } from "../constants";
-import EmailForm from "@/components/EmailForm";
+import ContactInfo from "../about/_components/ContactInfo";
+import EmailForm from "./_components/EmailForm";
 
 export default function ContactPage() {
   return (

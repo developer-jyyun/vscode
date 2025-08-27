@@ -1,5 +1,4 @@
-import CodeBlock from "./CodeBlock";
-import KeyValueCode from "./KeyValueCode";
+import KeyValueCode from "@/components/UI/KeyValueCode";
 
 export default function ContactInfo() {
   return (
@@ -15,16 +14,6 @@ export default function ContactInfo() {
         value="open chat"
         link="https://open.kakao.com/o/swsqMofg"
       />
-      {/* <KeyValueCode
-        keyName="github"
-        value="developer-jyyun"
-        link="https://github.com/developer-jyyun"
-      />
-      <KeyValueCode
-        keyName="blog"
-        value="developer-jyyun.log"
-        link="https://velog.io/@developer-jyyun/posts"
-      /> */}
     </>
   );
 }

@@ -1,5 +1,4 @@
-import ArrayCode from "./UI/ArrayCode";
-import CodeBlock from "./UI/CodeBlock";
+import CodeBlock from "@/components/UI/CodeBlock";
 
 export default function HowIWorks() {
   return (
