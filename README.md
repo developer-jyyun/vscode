@@ -1,51 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Web Front-end Portfolio (2025)
 
-## project
+VS Code 에디터를 테마로 한
+Next.js + TypeScript + Tailwind 기반 개인 포트폴리오 프로젝트입니다.  
+퍼블리싱과 프론트엔드 작업물을 정리하고, 실제 서비스 가능한 기능(이메일 전송, VS Code 테마 등)을 포함합니다.
 
-작업 중................
-목표 : VsCode를 테마로 포트폴리오 만들기
+---
 
-- next.js app 라우팅
-- pages : main, about, projects, contact,
-- TODO: posts, components, dark/light theme, 반응형, 애니메이션 효과
+## 🚀 주요 기능
 
-## 기술스택
+- **메인 페이지**: 전체 프로젝트와 소개 정보 표시
+- **프로젝트 페이지**: `src/data/projects.ts` 기반 프로젝트 목록 및 상세 소개
+- **About 페이지**: 자기소개 및 경력 정리
+- **Contact 페이지**: Nodemailer + Gmail SMTP를 이용한 실제 메일 전송 기능
+- **UI 컴포넌트**: Sidebar, TabsBar, Titlebar 등 재사용 가능한 구조화된 컴포넌트
 
-yarn
-next.js
-tailwind css
+---
 
-## Getting Started
+## 🛠 기술 스택
 
-First, run the development server:
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Mail Service**: Nodemailer (SMTP with Gmail)
+- **Deployment**: Netlify / Vercel
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 📂 프로젝트 구조
+
+```
+src/
+ ├─ app/               # 라우트 페이지
+ │   ├─ about/         # 자기소개
+ │   ├─ contact/       # 연락처 (이메일 전송)
+ │   ├─ projects/      # 프로젝트 리스트
+ │   ├─ api/           # API 핸들러
+ │   └─ layout.tsx     # 전체 레이아웃
+ │
+ ├─ components/        # 공통 UI 컴포넌트
+ │   ├─ UI/
+ │   ├─ Sidebar.tsx
+ │   ├─ TabsBar.tsx
+ │   └─ Titlebar.tsx
+ │
+ ├─ data/              # 정적 데이터
+ │   ├─ navData.ts
+ │   └─ projects.ts    # 프로젝트 배열 정의 (UI 자동 반영)
+ │
+ └─ service/           # 서비스 로직
+     ├─ contact.ts
+     └─ email.ts       # Nodemailer를 활용한 이메일 전송
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚡ 실행 방법
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+# 의존성 설치
+yarn install
 
-## Learn More
+# 개발 서버 실행
+yarn dev
 
-To learn more about Next.js, take a look at the following resources:
+# 빌드
+yarn build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📧 환경 변수 설정
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`.env.local` 파일을 프로젝트 루트에 생성하고 아래와 같이 입력합니다.
 
-## Deploy on Vercel
+```env
+AUTH_USER=your_gmail_address@gmail.com
+AUTH_PASS=your_app_password
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `AUTH_USER`: Gmail 주소
+- `AUTH_PASS`: 구글 앱 비밀번호(App Password) (2단계 인증 시 필요)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+---
+
+## 📌 참고
+
+- **Contact 페이지**: 실제 이메일 전송 가능 (SMTP 기반).
+- **프로젝트 관리**: `src/data/projects.ts`에서 항목 추가/수정 시 UI에 자동 반영됨.
+- 일부 만료된 프로젝트는 배포는 중단되었으나, README와 캡처로 확인할 수 있습니다.
