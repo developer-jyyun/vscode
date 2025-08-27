@@ -15,7 +15,7 @@ export default function ContactInfo() {
         value="open chat"
         link="https://open.kakao.com/o/swsqMofg"
       />
-      <KeyValueCode
+      {/* <KeyValueCode
         keyName="github"
         value="developer-jyyun"
         link="https://github.com/developer-jyyun"
@@ -24,7 +24,7 @@ export default function ContactInfo() {
         keyName="blog"
         value="developer-jyyun.log"
         link="https://velog.io/@developer-jyyun/posts"
-      />
+      /> */}
     </>
   );
 }

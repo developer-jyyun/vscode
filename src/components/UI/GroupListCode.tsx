@@ -1,75 +1,78 @@
-import React from "react";
-
-interface Group {
-  title: string;
-  details: string[];
-}
-
-interface Props {
-  keyName: string;
-  groups: Group[];
-  type?: "wrap" | "nowrap";
-}
+type Group = { title: string; details: string[] };
 
 export default function GroupListCode({
   keyName,
   groups,
-  type = "wrap",
-}: Props) {
+  bracketAlign = "key",
+}: {
+  keyName: string;
+  groups: Group[];
+  bracketAlign?: "key" | "content";
+}) {
+  const contentIndentCls = "ml-6";
+  const closingIndentCls = bracketAlign === "content" ? contentIndentCls : "";
+
   return (
-    <div className="indent-10 text-white max-lg:indent-0 text-[14px] leading-7">
-      {/* key명과 배열 시작 */}
-      <span className="text-code-red">{keyName}</span>
-      <span>: </span>
-      <span className="text-code-lime">[</span>
-      {type === "wrap" && <br />}
-      {/* 각 그룹 객체 */}
-      {groups.map((g, i) => (
-        <React.Fragment key={i}>
-          <div className={type === "wrap" ? "pl-4" : ""}>{"{"}</div>
+    <div className="font-mono text-sm leading-7">
+      <div>
+        <span className="text-code-red">{keyName}</span>
+        <span className="text-gray-c">: [</span>
+      </div>
+      <div className={`${contentIndentCls} space-y-4`}>
+        {groups.map((g, idx) => {
+          const hasDetails = Array.isArray(g.details) && g.details.length > 0;
 
-          {/* title: "..." , */}
-          <div className={type === "wrap" ? "pl-8" : "pl-4"}>
-            <span className="text-code-red">title</span>
-            <span>: </span>
-            <span className="text-code-lime">{`"${g.title}"`}</span>
-            <span>,</span>
-          </div>
+          // ✅ details 없는 항목: 한 줄로 "{ title: "...", },"
+          if (!hasDetails) {
+            return (
+              <div key={idx} className="text-code-lime">
+                {"{"} <span className="text-white">title</span>
+                <span className="text-gray-c">: </span>
+                <span className="text-white">{g.title}</span>
+                <span className="text-light-yellow"> {"}"}</span>
+                <span className="text-gray-c">,</span>
+              </div>
+            );
+          }
 
-          {/* details: [ ... ] */}
-          <div className={type === "wrap" ? "pl-8" : "pl-4"}>
-            <span className="text-code-red">details</span>
-            <span>: </span>
-            <span className="text-code-lime">[</span>
-            {type === "wrap" && <br />}
+          // ✅ details 있는 항목: 기존 멀티라인 형식
+          return (
+            <div key={idx}>
+              <div className="text-code-lime">
+                {"{"} <span className="text-white">title</span>
+                <span className="text-gray-c">: </span>"
+                <span className="text-white">{g.title}</span>"
+                <span className="text-gray-c">,</span>
+              </div>
+              <ul className="list-disc pl-5">
+                {g.details!.map((d, i) => (
+                  <li key={i} className="text-white">
+                    {d}
+                  </li>
+                ))}
+              </ul>
+              <div>
+                <span className="text-light-yellow">{"}"}</span>
+                <span className="text-gray-c">,</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
 
-            {g.details.map((d, j) => (
-              <React.Fragment key={j}>
-                <span
-                  className={`text-code-lime ${
-                    type === "wrap" ? "pl-12" : "pl-2"
-                  }`}
-                >
-                  {`"${d}"`}
-                </span>
-                {j < g.details.length - 1 && ","}
-                {type === "wrap" && <br />}
-              </React.Fragment>
-            ))}
-
-            <span className="text-code-lime">{"]"}</span>
-            <span>,</span>
-            {type === "wrap" && <br />}
-          </div>
-
-          <div className={type === "wrap" ? "pl-4" : ""}>
-            {i === groups.length - 1 ? "}" : "},"}
-          </div>
-          {type === "wrap" && <br />}
-        </React.Fragment>
-      ))}
-      {/* 배열 닫기 */}
-      <span className="text-code-lime">]</span>,{type === "wrap" && <br />}
+      {/*  <div
+        className={`${closingIndentCls} text-gray-c`}
+        style={{ textIndent: "-2ch" }}
+      >
+        <span className="text-light-yellow">]</span>
+        <span className="text-gray-c">,</span>
+      </div> */}
+      <div
+        className={`${closingIndentCls} text-gray-c`}
+        style={{ textIndent: "-2ch" }}
+      >
+        ],
+      </div>
     </div>
   );
 }

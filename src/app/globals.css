@@ -127,3 +127,33 @@ button {
     animation: none;
   }
 }
+
+@layer utilities {
+  /* 의미 기반 라벨 */
+  .text-code-key {
+    @apply text-code-lime;
+  } /* 속성 이름 */
+  .text-code-string {
+    @apply text-gray-e;
+  } /* 일반 값 */
+  .text-code-accent {
+    @apply text-code-purple;
+  } /* 링크/칩/강조 */
+  .text-code-muted {
+    @apply text-gray-c;
+  } /* 괄호/쉼표/보조 */
+
+  /* 링크/칩 프리셋 (원하는 곳에서 바로 사용) */
+  .link-code {
+    @apply text-code-accent underline underline-offset-4 decoration-dotted
+           hover:opacity-90 transition;
+  }
+  .chip-code {
+    @apply px-2 py-1 rounded border border-code-purple/60
+           text-code-accent hover:bg-code-purple hover:text-contents-navy
+           underline underline-offset-4 decoration-dotted transition;
+  }
+  .punct {
+    @apply text-code-muted;
+  } /* 콤마/대괄호 등 */
+}

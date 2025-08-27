@@ -16,7 +16,7 @@ const config: Config = {
       colors: {
         main: "#302f3d",
         "gray-e": "#eee",
-        "gray-c": "#ccc",
+        "gray-c": "#94A3B8",
         "light-yellow": "#f7ffac",
         "dark-navy": "#130e55",
         "main-navy": "#35334f",
@@ -25,7 +25,7 @@ const config: Config = {
         "light-navy": "#312e63",
         "code-red": "#f87171",
         "code-purple": "#d1a4ff",
-        "code-lime": "#d9ff98",
+        "code-lime": "#CFF09E",
       },
       fontFamily: {
         dunggeunmo: ["DungGeunMo", "sans-serif"],
