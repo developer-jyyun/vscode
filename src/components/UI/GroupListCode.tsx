@@ -1,4 +1,4 @@
-type Group = { title: string; details: string[] };
+type Group = { title: string; details?: string[] };
 
 export default function GroupListCode({
   keyName,
@@ -18,30 +18,35 @@ export default function GroupListCode({
         <span className="text-code-red">{keyName}</span>
         <span className="text-gray-c">: [</span>
       </div>
+
       <div className={`${contentIndentCls} space-y-4`}>
         {groups.map((g, idx) => {
           const hasDetails = Array.isArray(g.details) && g.details.length > 0;
 
-          // ✅ details 없는 항목: 한 줄로 "{ title: "...", },"
+          // ✅ details 없는 항목: 한 줄 렌더 ("..." 를 &quot; 로)
           if (!hasDetails) {
             return (
               <div key={idx} className="text-code-lime">
                 {"{"} <span className="text-white">title</span>
                 <span className="text-gray-c">: </span>
+                <span className="text-gray-c">&quot;</span>
                 <span className="text-white">{g.title}</span>
-                <span className="text-light-yellow"> {"}"}</span>
+                <span className="text-gray-c">&quot;</span>{" "}
+                <span className="text-light-yellow">{"}"}</span>
                 <span className="text-gray-c">,</span>
               </div>
             );
           }
 
-          // ✅ details 있는 항목: 기존 멀티라인 형식
+          // ✅ details 있는 항목: 멀티라인 렌더
           return (
             <div key={idx}>
               <div className="text-code-lime">
                 {"{"} <span className="text-white">title</span>
-                <span className="text-gray-c">: </span>"
-                <span className="text-white">{g.title}</span>"
+                <span className="text-gray-c">: </span>
+                <span className="text-gray-c">&quot;</span>
+                <span className="text-white">{g.title}</span>
+                <span className="text-gray-c">&quot;</span>
                 <span className="text-gray-c">,</span>
               </div>
               <ul className="list-disc pl-5">
@@ -60,13 +65,6 @@ export default function GroupListCode({
         })}
       </div>
 
-      {/*  <div
-        className={`${closingIndentCls} text-gray-c`}
-        style={{ textIndent: "-2ch" }}
-      >
-        <span className="text-light-yellow">]</span>
-        <span className="text-gray-c">,</span>
-      </div> */}
       <div
         className={`${closingIndentCls} text-gray-c`}
         style={{ textIndent: "-2ch" }}
