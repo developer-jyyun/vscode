@@ -1,31 +1,26 @@
+import { NextResponse } from "next/server";
 import { sendEmail } from "@/service/email";
-import * as yup from "yup";
 
-// yup 통한 유효성 검사
-const bodySchema = yup.object().shape({
-  from: yup.string().email().required(),
-  subject: yup.string().required(),
-  message: yup.string().required(),
-});
+export const runtime = "nodejs";
+
+const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(req: Request) {
-  const body = await req.json();
-  if (!bodySchema.isValidSync(body)) {
-    return new Response(JSON.stringify({ message: "메일 전송 실패.." }), {
-      status: 400,
-    });
+  try {
+    const { from, subject, message } = await req.json();
+
+    if (!from || !subject || !message || !emailRe.test(from)) {
+      return NextResponse.json(
+        { message: "입력값을 확인해 주세요." },
+        { status: 400 }
+      );
+    }
+
+    await sendEmail({ from, subject, message });
+    return NextResponse.json({ message: "ok" });
+  } catch (e) {
+    console.error("[/api/contact] error:", e);
+    // 프로덕션에선 상세 노출 지양
+    return NextResponse.json({ message: "메일 전송 실패" }, { status: 500 });
   }
-  return sendEmail(body)
-    .then(
-      () =>
-        new Response(JSON.stringify({ message: "메일 전송 성공!!" }), {
-          status: 200,
-        })
-    )
-    .catch((error) => {
-      console.error("😂", error);
-      return new Response(JSON.stringify({ message: "메일 전송 실패.." }), {
-        status: 500,
-      });
-    });
 }

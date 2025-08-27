@@ -104,3 +104,26 @@ button {
   color: #d9ff98;
 }
  */
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 유틸 클래스 */
+.caret-blink {
+  display: inline-block;
+  animation: caret-blink 1s steps(1, end) infinite;
+}
+
+/* 접근성: 모션 최소화 설정 시 애니메이션 비활성화 */
+@media (prefers-reduced-motion: reduce) {
+  .caret-blink {
+    animation: none;
+  }
+}

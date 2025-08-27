@@ -37,16 +37,17 @@ export default function EmailForm() {
         });
         setForm(DEFAULT_DATA);
       })
-      .catch(() => {
+      .catch((err: any) => {
         setMessage({
-          message: "이메일 전송에 실패하였습니다!",
+          message:
+            process.env.NODE_ENV !== "production"
+              ? `전송 실패: ${err?.message ?? "알 수 없는 오류"}`
+              : "전송 실패. 잠시 후 다시 시도해 주세요.",
           state: "error",
         });
       })
       .finally(() => {
-        setTimeout(() => {
-          setMessage(null);
-        }, 3000);
+        setTimeout(() => setMessage(null), 3000);
       });
   };
   return (

@@ -75,7 +75,8 @@ export const projects: Project[] = [
     desc: "신입 퍼블리셔 포트폴리오 (정적 UI)",
     tech: ["HTML", "CSS", "jQuery"],
     image: "/thumbs/2021-portfolio.png",
-    github: "https://github.com/developer-jyyun/publishing_portfolio2021",
+    github:
+      "https://github.com/developer-jyyun/publishing_portfolio2021/blob/main/README.md",
     site: "https://lively-figolla-d6b939.netlify.app",
     status: "active",
     children: [

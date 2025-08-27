@@ -10,7 +10,10 @@ export default function Home() {
     <section className="flex flex-col items-end justify-end gap-10 p-24 bg-contents-navy max-lg:p-2 ">
       <div className="flex flex-col items-end justify-end gap-10 ">
         <h2 className={`max-lg:text-xl text-7xl font-bold ${mono.className}`}>
-          hello, world! |
+          hello, world!
+          <span className="ml-2 caret-blink" aria-hidden="true">
+            |
+          </span>
         </h2>
         <h3 className="text-cyan-100 text-4xl leading-10 font-bold max-lg:text-lg">
           <span>

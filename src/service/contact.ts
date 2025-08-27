@@ -1,5 +1,6 @@
-import { EmailData } from "./email";
-
+// import { EmailData } from "./email";
+//타입 전용 import
+import type { EmailData } from "@/service/email";
 export async function sendContactEmail(email: EmailData) {
   const response = await fetch("/api/contact", {
     method: "POST",

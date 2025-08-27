@@ -1,9 +1,6 @@
 import nodemailer from "nodemailer";
-export type EmailData = {
-  from: string;
-  subject: string;
-  message: string;
-};
+
+export type EmailData = { from: string; subject: string; message: string };
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -15,19 +12,16 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-console.log(process.env.AUTH_USER);
-export async function sendEmail(data: EmailData) {
-  const mailData = {
-    to: process.env.AUTH_USER,
-    subject: `[PORTFOLIO] ${data.subject}`,
-    from: data.from,
-    html: `
-        <h1>${data.subject}</h1>
-        <div>${data.message}</div>
-        <br/>
-        <p>${data.from}</p>
-        `,
-  };
-
-  return transporter.sendMail(mailData);
+export async function sendEmail({ from, subject, message }: EmailData) {
+  return transporter.sendMail({
+    to: process.env.AUTH_USER, // 내가 받을 주소
+    from: `"Portfolio Contact" <${process.env.AUTH_USER}>`, // 인증 계정으로 발신
+    replyTo: from, // 회신은 사용자 메일
+    subject: `[PORTFOLIO] ${subject}`,
+    text: `From: ${from}\n\n${message}`,
+    html: `<h1>${subject}</h1><div>${message.replace(
+      /\n/g,
+      "<br/>"
+    )}</div><br/><p>From: ${from}</p>`,
+  });
 }
