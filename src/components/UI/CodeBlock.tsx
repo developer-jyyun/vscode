@@ -7,7 +7,7 @@ interface Props {
   className?: string;
 }
 
-const INDENT = "ml-6 max-lg:ml-0"; // 부모만 들여쓰기 담당
+const INDENT = "ml-6 max-lg:ml-0";
 
 export default function CodeBlock({
   objName,
@@ -15,8 +15,12 @@ export default function CodeBlock({
   children,
   className,
 }: Props) {
-  const closingChar = type === "obj" ? "}" : "]";
-  const closingClass = type === "obj" ? "text-light-yellow" : "text-gray-c";
+  //  여닫는 기호와 색상을 한 곳에서 결정
+  const openChar = type === "obj" ? "{" : "[";
+  const closeChar = type === "obj" ? "}" : "]";
+  const punctClass = (ch: "{" | "}" | "[" | "]") =>
+    ch === "{" || ch === "}" ? "text-light-yellow" : "text-gray-c";
+
   return (
     <div
       className={`code-block text-xl text-white leading-8 bg-contents-navy rounded-md p-8 
@@ -29,18 +33,16 @@ export default function CodeBlock({
           const
         </span>
         <span className="ml-4 text-4xl font-bold max-lg:text-xl">
-          {objName} = {type === "obj" ? "{" : "["}
+          {objName} = <span className={punctClass(openChar)}>{openChar}</span>
         </span>
       </p>
 
-      {/* 자식은 모두 동일 들여쓰기 */}
       <div className={INDENT}>{children}</div>
 
-      {/* 닫는 괄호도 동일 들여쓰기 */}
       <span
         className={`block ${INDENT} mt-8 text-4xl font-bold max-lg:text-xl`}
       >
-        <span className={closingClass}>{closingChar}</span>
+        <span className={punctClass(closeChar)}>{closeChar}</span>
       </span>
     </div>
   );
