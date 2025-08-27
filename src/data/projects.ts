@@ -62,8 +62,7 @@ export const projects: Project[] = [
     tech: ["React", "Tailwind"],
     image: "/thumbs/mowd.png",
     site: "https://jiyoung-chunho-wedding.netlify.app/",
-    github:
-      "https://github.com/developer-jyyun/mo-weddingy/blob/main/README.md",
+    github: "https://github.com/developer-jyyun/mo-wedding/blob/main/README.md",
     status: "active",
     category: "frontend",
     children: [
@@ -84,7 +83,7 @@ export const projects: Project[] = [
     image: "/thumbs/cotie.png",
     site: "https://celebrated-entremet-59e693.netlify.app",
     github:
-      "https://github.com/developer-jyyun/cotie-clone/blob/main/README.md",
+      "https://github.com/developer-jyyun/cotie/blob/KDT0_YunJiYoung/README.md",
     status: "active",
     children: [
       { title: "시맨틱 태그 기반 마크업" },
