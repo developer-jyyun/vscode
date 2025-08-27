@@ -14,12 +14,11 @@ const navData = [
     path: "/projects",
     icon: "/icons/ts_icon.svg",
   },
-
   {
     name: "contact.json",
     path: "/contact",
     icon: "/icons/json_icon.svg",
   },
-];
+] as const;
 
 export default navData;

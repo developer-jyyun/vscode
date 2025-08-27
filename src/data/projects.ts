@@ -18,15 +18,23 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "Web Front-end-portfolio",
+    id: "portfolio-2025",
     title: "Web Front-end Portfolio (2025)",
-    desc: "2025 VS Code 테마 개인 포트폴리오",
-    tech: ["Next.js", "TypeScript", "Tailwind"],
+    desc: "VS Code 에디터 UI 기반 포트폴리오",
+    tech: ["Next.js", "TypeScript", "Tailwind", "Nodemailer"],
     image: "/thumbs/vscode.png",
-    github: "https://github.com/developer-jyyun/vscode/blob/main/README.md",
     site: "https://fe-vscode-portfolio.netlify.app/projects",
+    github: "https://github.com/developer-jyyun/vscode/blob/main/README.md",
     status: "active",
     category: "frontend",
+    children: [
+      { title: "VS Code UI 디자인" },
+      { title: "사이드바, 탭바, 코드블록 등 IDE 감성 인터페이스" },
+      { title: "프로젝트 데이터 자동 렌더링 (`projects.ts` 기반)" },
+      { title: "Contact 페이지: Nodemailer + Gmail SMTP로 실제 메일 전송" },
+      { title: "Netlify/Vercel 배포 지원" },
+    ],
+    note: "퍼블리싱 + 프론트엔드 프로젝트를 VS Code 인터페이스로 표현한 포트폴리오",
   },
   {
     id: "disney-clone",
@@ -50,7 +58,7 @@ export const projects: Project[] = [
   {
     id: "wedding-invite",
     title: "모바일 청첩장",
-    desc: "반응형 싱글페이지",
+    desc: "React + TypeScript 기반 모바일 청첩장",
     tech: ["React", "Tailwind"],
     image: "/thumbs/mowd.png",
     site: "https://jiyoung-chunho-wedding.netlify.app/",
@@ -58,6 +66,15 @@ export const projects: Project[] = [
       "https://github.com/developer-jyyun/mo-weddingy/blob/main/README.md",
     status: "active",
     category: "frontend",
+    children: [
+      { title: "Intro 섹션 및 하이라이트 영상" },
+      { title: "이미지 갤러리 & 풀스크린 뷰어" },
+      { title: "연락처 / 계좌번호 복사 기능" },
+      { title: "카카오페이 연결 기능" },
+      { title: "카카오맵/네이버 지도 연동" },
+      { title: "D-Day 카운트다운, 배경음악 토글" },
+    ],
+    note: "실제 행사용으로도 사용 가능한 반응형 SPA",
   },
   {
     id: "cotie-clone",
@@ -82,7 +99,7 @@ export const projects: Project[] = [
   {
     id: "publishing-2021",
     title: "Web Publisher Portfolio(2021)",
-    desc: "신입 퍼블리셔 포트폴리오 (정적 UI)",
+    desc: "신입 퍼블리셔 포트폴리오",
     tech: ["HTML", "CSS", "jQuery"],
     image: "/thumbs/2021-portfolio.png",
     github:
@@ -93,14 +110,15 @@ export const projects: Project[] = [
       { title: "해커스 어학원 클론" },
       { title: "스타벅스 클론" },
       { title: "기타 웹페이지 리뉴얼(기획, 디자인) 프로젝트" },
+      { title: "포토샵 / 일러스트 작업물 포함" },
     ],
-    note: "정적 구현 중심, 이후 최신 스택으로 개선 가능",
+    note: "포트폴리오 내 일부 페이지 서버 만료.",
     category: "publishing",
   },
   {
     id: "team-a",
     title: "패키지 여행 서비스",
-    desc: "팀 파이널 프로젝트",
+    desc: "NEXT.JS 기반 팀(FE + BE + PM)프로젝트",
     tech: ["Next.js", "TypeScript", "React Query", "Tailwind"],
     image: "/thumbs/team-final.png",
     github: "https://github.com/developer-jyyun/team_final/blob/main/README.md",
@@ -108,7 +126,7 @@ export const projects: Project[] = [
     children: [
       { title: "My Page 유저 정보 등록 및 수정" },
       { title: "리뷰 작성 및 삭제" },
-      { title: "예약 목록 및 내가 쓴 리뷰 목록 확인" },
+      { title: "예약 목록 및 내가 쓴 리뷰 목록" },
       { title: " 공지사항, 자주 묻는 질문" },
     ],
     note: "서버 만료 — README에 캡처/회고 수록",
@@ -117,7 +135,7 @@ export const projects: Project[] = [
   {
     id: "tr1ll1on",
     title: " 숙박 예약 서비스",
-    desc: "팀 미니 프로젝트 숙박 예약 서비스",
+    desc: "React 기반 팀(FE + BE)프로젝트",
     tech: [
       "React",
       "TypeScript",

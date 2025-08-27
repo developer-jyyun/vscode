@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import navData from "@/data/navData";
+
 interface Props {
   variant: "tabs" | "sidebar";
 }
@@ -14,34 +15,31 @@ export default function NavItem({ variant }: Props) {
   return (
     <>
       {navData.map((nav) => {
+        // 하위 경로 활성, 루트(/)는 정확히 일치할 때만
         const isActive =
-          pathname === nav.path || pathname.startsWith(nav.path + "/");
+          pathname === nav.path ||
+          (nav.path !== "/" && pathname.startsWith(nav.path + "/"));
 
-        // 공통: 1px 상단 보더(투명)로 레이아웃 점프 방지 + 기본 hover
-        const liBase =
-          "px-4 py-2 rounded-sm transition-colors " +
-          "border-t border-transparent " +
-          "text-zinc-300 hover:bg-slate-800/60 hover:text-indigo-100";
-
-        // (공통) active 시 텍스트만 바꾸는 클래스
-        const activeTextOnly = "text-indigo-200";
-
-        let liClass = liBase;
+        let liClass = "px-4 py-2 rounded-sm transition-colors";
 
         if (variant === "tabs") {
-          // 탭: 활성 시 배경 + 상단 보더 + hover 중립화(깜빡임 방지)
-          liClass += isActive
-            ? ` ${activeTextOnly} bg-contents-navy border-indigo-300 hover:bg-contents-navy hover:text-indigo-200`
-            : "";
+          // 탭: 위 2px 보더. 활성 시 항상 보임.
+          liClass +=
+            " border-t-2 " +
+            (isActive
+              ? " bg-contents-navy text-indigo-200 border-t-indigo-300"
+              : " border-t-transparent hover:bg-slate-800/60 hover:text-indigo-100 hover:border-t-indigo-300/60");
         } else {
-          // 사이드바: 활성 시 텍스트색만 변경
-          liClass += isActive ? ` ${activeTextOnly}` : "";
+          // 사이드바:  색상만 변경
+          liClass += isActive
+            ? " bg-slate-800/40 text-indigo-200"
+            : " text-zinc-300 hover:bg-slate-800/60 hover:text-indigo-100";
         }
 
-        const iconClass = `w-5 h-5 ${isActive ? "opacity-100" : "opacity-90"}`;
+        const iconClass = `w-5 h-5 ${isActive ? "opacity-100" : "opacity-75"}`;
 
         return (
-          <li key={nav.name} className={liClass}>
+          <li key={nav.path} className={liClass}>
             <Link
               href={nav.path}
               aria-current={isActive ? "page" : undefined}

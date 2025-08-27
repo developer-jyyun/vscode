@@ -61,7 +61,7 @@ export default function ProjectsTabs() {
     <div className="space-y-0">
       {/* 탭 바 */}
       <div className="flex items-end justify-between">
-        <div className="flex gap-2">
+        <div className="flex border-b border-white/30">
           {TABS.map((t) => {
             const active = t.key === tab;
             return (
