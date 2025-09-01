@@ -99,7 +99,7 @@ export const projects: Project[] = [
     tech: ["HTML", "CSS", "jQuery", "JavasSript"],
     image: "/thumbs/2021-portfolio.png",
     github:
-      "https://github.com/developer-jyyun/publishing_portfolio2021/blob/main/README.md",
+      "https://github.com/developer-jyyun/publishing_portfolio2021/blob/master/README.md",
     site: "https://jy-portfolio-publising.netlify.app",
     status: "active",
     category: "publishing",
