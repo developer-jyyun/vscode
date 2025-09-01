@@ -51,7 +51,7 @@ export default function ProjectsTabs() {
               <button
                 key={t.key}
                 onClick={() => setTab(t.key)}
-                className={`flex-1 md:flex-none text-center px-3 py-2 rounded-md text-sm font-medium transition
+                className={`flex-1 md:flex-none  text-center px-3 py-2 rounded-md  font-medium transition max-md:text-[.72rem]
           ${
             active
               ? "bg-indigo-600 text-white shadow-md"
