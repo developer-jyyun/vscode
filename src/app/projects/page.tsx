@@ -7,7 +7,10 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <section className=" content-dense theme-muted pt-12 min-h-[100svh] overflow-x-hidden">
+    <section
+      id="project-top"
+      className=" content-dense theme-muted pt-12 min-h-[100svh] overflow-x-hidden"
+    >
       <h2 className="sr-only">Projects</h2>
       <Suspense fallback={<div>Loading...</div>}>
         <ProjectsTabs />

@@ -4,6 +4,7 @@ import "./globals.css";
 import Titlebar from "@/components/Titlebar";
 import Sidebar from "@/components/Sidebar";
 import Tabsbar from "@/components/TabsBar";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const nanum = Nanum_Gothic({
   weight: ["400", "700"],
@@ -43,6 +44,8 @@ export default function RootLayout({
           <main className="flex-1 overflow-y-auto scrollbar-hide bg-contents-navy">
             {children}
           </main>
+          {/* 스크롤 제어 */}
+          <ScrollToTop />
         </div>
       </body>
     </html>
