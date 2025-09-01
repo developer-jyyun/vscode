@@ -7,9 +7,9 @@ import EmailForm from "./_components/EmailForm";
 
 export default function ContactPage() {
   return (
-    <section className="bg-contents-navy flex gap-4 w-full items-center justify-evenly max-lg:flex-col max-lg:items-start ">
-      <article className="w-[50%]">
-        <h2 className={`${TITLE_CLASS}`}>Please contact me!💖</h2>
+    <section className=" flex gap-4 w-full items-center justify-evenly max-lg:flex-col   max-lg:pb-10 ">
+      <article>
+        <h2 className={`${TITLE_CLASS} max-lg:mb-5`}>Please contact me!💖</h2>
         <CodeBlock objName="contactInfo " type="obj">
           <ContactInfo />
         </CodeBlock>

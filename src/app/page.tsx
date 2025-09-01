@@ -1,33 +1,38 @@
-import Image from "next/image";
-import "./globals.css";
 import Button from "@/components/UI/Button";
-import { Nanum_Gothic, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 
 const mono = JetBrains_Mono({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-end justify-end gap-10 p-24 bg-contents-navy max-lg:p-2 ">
-      <div className="flex flex-col items-end justify-end gap-10 ">
-        <h2 className={`max-lg:text-xl text-7xl font-bold ${mono.className}`}>
-          hello, world!
-          <span className="ml-2 caret-blink" aria-hidden="true">
-            |
-          </span>
-        </h2>
-        <h3 className="text-cyan-100 text-4xl leading-10 font-bold max-lg:text-lg">
-          <span>
-            <span className="text-code-red">사용자 중심</span>의 웹 개발을
-            지향하는
-          </span>
-          <br />
-          <span className="text-code-lime"> 프론트엔드 개발자 윤지영</span>
-          입니다.:)
+    <section className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] bg-contents-navy gap-10 text-center px-6">
+      {/* 중앙 헤드라인 */}
+      <h2 className={`text-4xl md:text-7xl font-bold ${mono.className} typing`}>
+        hello, world!
+      </h2>
+
+      {/* 설명 + 버튼 묶음 */}
+      <div className="flex flex-col items-center gap-6 max-w-2xl">
+        <h3 className="text-cyan-100 text-lg md:text-2xl font-bold leading-relaxed">
+          <span className="text-code-red">사용자 중심</span>의 웹 개발을
+          지향하는 <br />
+          <span className="text-code-lime">프론트엔드 개발자 윤지영</span>{" "}
+          입니다. :)
         </h3>
-      </div>
-      <div>
-        <Button text="projects" link="/projects" theme="bg" />
-        <Button text="contact" link="/contact" theme="line" />
+
+        <p className="mt-6 text-md text-zinc-400">
+          👉{" "}
+          <a href="/projects" className=" text-code-purple hover:underline">
+            projects
+          </a>{" "}
+          /
+          <a
+            href="/contact"
+            className="text-code-purple/80 hover:underline ml-2"
+          >
+            contact
+          </a>
+        </p>
       </div>
     </section>
   );

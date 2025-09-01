@@ -53,7 +53,7 @@ export default function Profile() {
         <KeyValueCode
           keyName="resume"
           value="📃 이력서(PDF)"
-          link="/docs/resume.pdf"
+          link="/docs/yunjiyoung-resume.pdf"
         ></KeyValueCode>
       </CodeBlock>
     </>

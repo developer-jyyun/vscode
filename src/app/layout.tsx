@@ -18,24 +18,32 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${mono.className} box-border flex flex-col max-h-screen`}
-      >
-        <>
-          <Titlebar />
-          <div className="flex w-full">
-            <Sidebar />{" "}
-            <main className="w-full min-h-[100dvh] overflow-y-scroll scrollbar-hide flex flex-col">          
-              <Tabsbar />
-              {children}
-            </main>
-          </div>
-        </>
+    <html lang="en" className="h-full">
+      <body className={`${mono.className} h-full flex flex-col`}>
+        {/* 상단 타이틀바 */}
+        <Titlebar />
+
+        {/* 탭바 */}
+        <div className="sticky top-0 z-20 w-full bg-main-navy lg:pl-16">
+          <Tabsbar />
+        </div>
+
+        {/* 콘텐츠 영역 */}
+        <div className="flex flex-1 w-full overflow-hidden">
+          {/* PC 사이드바 */}
+          <aside className="hidden lg:flex shrink-0">
+            <Sidebar />
+          </aside>
+
+          {/* 메인 컨텐츠 */}
+          <main className="flex-1 overflow-y-auto scrollbar-hide bg-contents-navy">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

@@ -34,7 +34,7 @@ export default function Titlebar() {
           className="absolute left-1/2 transform -translate-x-1/2 text-sm 
         "
         >
-          Jiyoung Yun - Visual Studio Code
+          Jiyoung Yun - Front-End Portfolio
         </p>
         <div className="flex gap-2">
           <span className="inline-block w-3 h-3 rounded-full bg-red-400"></span>

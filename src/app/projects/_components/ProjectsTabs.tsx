@@ -29,7 +29,6 @@ export default function ProjectsTabs() {
   }, [tab]);
 
   const list: Project[] = useMemo(() => {
-    // 1) 탭별 기본 리스트 선택
     let base: Project[];
     switch (tab) {
       case "frontend":
@@ -39,36 +38,31 @@ export default function ProjectsTabs() {
         base = grouped.publishing;
         break;
       default:
-        base = projects; // All은 원본 배열 순서 그대로
+        base = projects;
     }
 
-    // 2) 상태 파티셔닝 (원본 순서 유지)
     const actives = base.filter((p) => p.status !== "expired");
     const expired = base.filter((p) => p.status === "expired");
-
-    // 3) 만료 포함 여부에 따라 병합
     return showExpired ? [...actives, ...expired] : actives;
   }, [tab, showExpired]);
 
-  const tabBtn = (active: boolean) =>
-    `px-4 py-2 rounded-t-md border ${
-      active
-        ? "bg-white text-contents-navy border-white"
-        : "bg-transparent text-white/80 border-transparent hover:text-white hover:border-white/30"
-    } transition`;
-
   return (
-    <div className="space-y-0">
+    <div className="space-y-6">
       {/* 탭 바 */}
-      <div className="flex items-end justify-between">
-        <div className="flex border-b border-white/30">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 px-4">
+        <div className="flex flex-wrap justify-center gap-2">
           {TABS.map((t) => {
             const active = t.key === tab;
             return (
               <button
                 key={t.key}
                 onClick={() => setTab(t.key)}
-                className={`${tabBtn(active)} ${active ? "border-b-0" : ""}`}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition
+                ${
+                  active
+                    ? "bg-indigo-600 text-white shadow-md"
+                    : "bg-white/10 text-white/80 hover:bg-white/20"
+                }`}
               >
                 {t.label}
               </button>
@@ -76,7 +70,7 @@ export default function ProjectsTabs() {
           })}
         </div>
 
-        <label className="flex items-center gap-2 text-sm text-white/80 select-none">
+        <label className="flex items-center justify-center gap-2 text-sm text-white/80 select-none">
           <input
             type="checkbox"
             checked={showExpired}
@@ -87,9 +81,15 @@ export default function ProjectsTabs() {
         </label>
       </div>
 
-      <div className="rounded-b-md  -mt-px p-4">
-        {/* auto-fill로 가득 채우기 */}
-        <ul className="grid gap-6 [grid-template-columns:repeat(auto-fill,minmax(260px,1fr))]">
+      {/* 프로젝트 카드 리스트 */}
+      <div className="rounded-md">
+        <ul
+          className="
+    grid gap-10 px-6
+    grid-cols-1 sm:grid-cols-2 lg:grid-cols-3   
+    items-stretch
+  "
+        >
           {list.map((p) => (
             <ProjectCard key={p.id ?? p.title} p={p} />
           ))}

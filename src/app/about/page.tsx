@@ -8,7 +8,7 @@ import HowIWorks from "./_components/HowIWorks";
 
 export default function AboutPage() {
   return (
-    <section className="bg-contents-navy content-dense theme-muted pt-12">
+    <section className=" content-dense theme-muted pt-12">
       <article>
         <h2 className={TITLE_CLASS}>{`/* 🙆‍♀️ About Me */`}</h2>
         <Profile />
