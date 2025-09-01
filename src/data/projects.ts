@@ -102,7 +102,7 @@ export const projects: Project[] = [
     image: "/thumbs/2021-portfolio.png",
     github:
       "https://github.com/developer-jyyun/publishing_portfolio2021/blob/main/README.md",
-    site: "jy-portfolio-publising.netlify.app",
+    site: "https://jy-portfolio-publising.netlify.app",
     status: "active",
     children: [
       { title: "해커스 어학원 클론" },
