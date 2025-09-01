@@ -31,7 +31,7 @@ export default function Titlebar() {
           </ul>
         </div>
         <p
-          className="absolute left-1/2 transform -translate-x-1/2 text-sm 
+          className="text-sm w-full text-center block
         "
         >
           Jiyoung Yun - Front-End Portfolio

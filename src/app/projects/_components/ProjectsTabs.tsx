@@ -29,17 +29,9 @@ export default function ProjectsTabs() {
   }, [tab]);
 
   const list: Project[] = useMemo(() => {
-    let base: Project[];
-    switch (tab) {
-      case "frontend":
-        base = grouped.frontend;
-        break;
-      case "publishing":
-        base = grouped.publishing;
-        break;
-      default:
-        base = projects;
-    }
+    let base: Project[] = projects;
+    if (tab === "frontend") base = grouped.frontend;
+    if (tab === "publishing") base = grouped.publishing;
 
     const actives = base.filter((p) => p.status !== "expired");
     const expired = base.filter((p) => p.status === "expired");
@@ -50,19 +42,21 @@ export default function ProjectsTabs() {
     <div className="space-y-6">
       {/* 탭 바 */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 px-4">
-        <div className="flex flex-wrap justify-center gap-2">
+        {/* 버튼 영역: 모바일은 grid, PC는 flex */}
+        <div className="flex w-full md:w-auto gap-2">
+          {" "}
           {TABS.map((t) => {
             const active = t.key === tab;
             return (
               <button
                 key={t.key}
                 onClick={() => setTab(t.key)}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition
-                ${
-                  active
-                    ? "bg-indigo-600 text-white shadow-md"
-                    : "bg-white/10 text-white/80 hover:bg-white/20"
-                }`}
+                className={`flex-1 md:flex-none text-center px-3 py-2 rounded-md text-sm font-medium transition
+          ${
+            active
+              ? "bg-indigo-600 text-white shadow-md"
+              : "bg-white/10 text-white/80 hover:bg-white/20"
+          }`}
               >
                 {t.label}
               </button>
@@ -70,6 +64,7 @@ export default function ProjectsTabs() {
           })}
         </div>
 
+        {/* 체크박스 */}
         <label className="flex items-center justify-center gap-2 text-sm text-white/80 select-none">
           <input
             type="checkbox"
@@ -85,10 +80,10 @@ export default function ProjectsTabs() {
       <div className="rounded-md">
         <ul
           className="
-    grid gap-10 px-6
-    grid-cols-1 sm:grid-cols-2 lg:grid-cols-3   
-    items-stretch
-  "
+            grid gap-8 px-6
+            grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+            items-stretch
+          "
         >
           {list.map((p) => (
             <ProjectCard key={p.id ?? p.title} p={p} />
